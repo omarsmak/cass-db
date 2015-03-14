@@ -1,0 +1,122 @@
+<div ng-controller="LoggingCtrl" ng-hide="hideLoginCtrl">
+    <div class="svg-loader text-center" loading-spinner></div>
+    <div ng-show="error.showLogingError" class="loginErrorPanel" >
+        <div class="alert alert-danger" style="padding:30px;"  role="alert"><b>{{error.logInErrorMessage}}:</b><br />{{error.logInErrorDetails}}</div>
+
+        <a href="#" class="btn btn-success btn-lg pull-right" style="margin-top:20px;" ng-click="loginErrotBackClk()">Back</a>
+    </div>
+    <h4 class="svg-loader-text text-center">{{loader.loadingText}}</h4>
+
+    <div id="headerwrap">
+        <div class="container">
+            <div class="row  animate-login" ng-show="showLoginLanding">
+                <div class="col-lg-6" >
+                    <h1>Login to Cassandra<br><br></h1>
+
+                    <form class="form-horizontal col-lg-8" accept-charset="utf-8" ng-submit="submitForm()" >
+                        <div class="form-group"><input class="form-control" type="text" name="address"
+                                                       placeholder="Server Address: IP or Hostname" required
+                                                       ng-model="address"></div>
+                        <div class="form-group"><input class="form-control" type="text" name="username"
+                                                       placeholder="Username" required ng-model="username"></div>
+                        <div class="form-group"><input class="form-control" type="password" name="password"
+                                                       placeholder="password" required ng-model="password"></div>
+                        <div class="form-group"><input class="btn btn-success" type="submit" value="Login"></div>
+                    </form>
+                </div>
+                <!-- /col-lg-6 -->
+                <div class="col-lg-6" >
+                    <h1 class="text-center logotext">cass[db]</h1>
+                </div>
+                <!-- /col-lg-6 -->
+
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+
+    <div id="footerwrap" ng-show="showLoginLanding" class="footer-animate">
+
+        <div class="container">
+            <div class="row mt">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <div class="row mt text-center">
+                        <h1>About</h1>
+                    </div>
+
+                    <h3>cass[db] is a software tool intended to handle the administration of Cassandra.<br><br>cass[db] supports a wide range of operations including managing keyspaces, column families, and columns via the user interface, while you still have the ability to directly execute any CQL statement.</h3>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="row mt">
+                <div class="row mt text-center">
+                    <h1>Features</h1>
+                </div>
+                <div class="col-lg-6 col-lg-offset-3">
+                    <ul>
+                        <li>Connection to remote and local servers</li>
+                        <li>User Authentication</li>
+                        <li>Keyspaces
+                            <ul>
+                                <li>List</li>
+                                <li>Add keyspace</li>
+                                <li>Delete keyspace</li>
+                                <li>Custom CQL execution</li>
+                            </ul>
+                        </li>
+                        <li>Column Families (CF)
+                            <ul>
+                                <li>List</li>
+                                <li>Add CF</li>
+                                <li>Delete CF</li>
+                                <li>Custom CQL execution</li>
+                            </ul>
+                        </li>
+                        <li>Column Family
+                            <ul>
+                                <li>Browse data
+                                    <ul>
+                                        <li>View row</li>
+                                        <li>Add row</li>
+                                        <li>Delete row</li>
+                                        <li>Edit row</li>
+                                    </ul>
+                                </li>
+                                <li>Schema
+                                    <ul>
+                                        <li>View CF schema</li>
+                                        <li>Add column</li>
+                                        <li>Delete column</li>
+                                        <li>Edit column</li>
+                                    </ul>
+                                </li>
+                                <li>Custom CQL execution</li>
+                            </ul>
+                        </li>
+                        <li>Error Handling
+                            <ul>
+                                <li>Connection</li>
+                                <li>User Authentication</li>
+                                <li>UI Operations</li>
+                                <li>CQL execution</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+
+        <div class="container">
+
+            <!-- /row -->
+            <hr>
+            <p class="text-center">Created by Omar Al-Safi, Mohammad Alhareeqi, and Farshid Tavakolizadeh - 2015</p>
+        </div>
+        <!-- /container -->
+    </div>
+</div>
+
+

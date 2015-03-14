@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app = "cassApp"  ng-controller="MainCtrl">
+  <head>
+    <title>cass[db]</title>
+
+
+    <script src="/modules/underscore-min.js"></script>
+   
+	<link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/stylesheets/animate.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/ng-scrollbar.css' />
+    <link rel='stylesheet' href='/stylesheets/ui-grid-unstable.min.css' />
+
+    <script src="/modules/angular.min.js"></script>
+    <script src="/modules/angular-animate.min.js"></script>
+    <script src="/modules/angular-cookies.min.js"></script>
+    <script src="/modules/ng-slide-down.js"></script>
+    <script src="/modules/ng-scrollbar.js"></script>
+    <script src="/modules/ui-grid-unstable.min.js"></script>
+    <script src="/modules/ui-bootstrap-tpls-0.12.1.min.js"></script>
+    <script src="/clientApp.js"></script>
+
+  </head>
+  <body>
+
+  <div ng-switch on="signedIn">
+    <div ng-switch-when="true"><div class="dashboard-container" ng-include="'/views/dashboard.html'"></div></div>
+    <div ng-switch-when="false"><div ng-include="'/views/logging.html'"></div></div>
+  </div>
+   <!--
+  <div ng-include="'/views/logging.html'" ng-if=""></div>
+
+
+  <div ng-include="'/views/dashboard.html'" class="dashboard-container"></div> -->
+
+  </body>
+</html>

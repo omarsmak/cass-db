@@ -1,0 +1,12 @@
+
+<div ng-controller="KeyspaceCtrl">
+    <ul class="nav nav-pills">
+        <li class="{{getActiveBtnSchema()}}"><a href="#" ng-click="openSchema()">Schema</a></li>
+        <li class="{{getActiveBtnCql()}}"><a href="#" ng-click="openCQL()">CQL</a></li>
+    </ul>
+    <div ng-switch on="SelectedKeyspaceOperation">
+        <div ng-switch-when="structure"><div ng-include="'/views/keyspace_structure_view.html'"></div></div>
+        <div ng-switch-when="cql"><div ng-include="'/views/cql.html'"></div></div>
+    </div>
+
+</div>

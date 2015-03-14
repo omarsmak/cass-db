@@ -1,0 +1,13 @@
+<div ng-controller="TableCtrl">
+    <ul class="nav nav-pills">
+        <li class="{{getActiveBtnBrowse()}}"><a href="#" ng-click="openBrowse()">Browse</a></li>
+        <li class="{{getActiveBtnSchema()}}"><a href="#" ng-click="openSchema()">Schema</a></li>
+        <li class="{{getActiveBtnCql()}}"><a href="#" ng-click="openCQL()">CQL</a></li>
+    </ul>
+    <div ng-switch on="SelectedTableOperation">
+        <div ng-switch-when="browse"><div ng-include="'/views/table_data_view.html'"></div></div>
+        <div ng-switch-when="structure"><div ng-include="'/views/table_structure_view.html'"></div></div>
+        <div ng-switch-when="cql"><div ng-include="'/views/cql.html'"></div></div>
+    </div>
+
+</div>

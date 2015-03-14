@@ -1,0 +1,23 @@
+<div id="sidebar-wrapper" ng-controller="SidebarCtrl">
+    <div ng-scrollbar rebuild-on="rebuild:me" rebuild-on-resize  style="height: 100%">
+       <div class="sidebar-server">
+           <a href="#" ng-click="selectMainDashboard()">
+               <i class="fa fa-chevron-left"></i>
+               <h4 class="text-center">Back to keyspaces</h4>
+           </a>
+    </div>
+    <ul class="sidebar-nav" ng-repeat="keyspace in keyspacesSidebar">
+       <li>
+           <a ng-class="activeClass($index)" href="#" ng-click="expandSub($index)">
+               <i class="fa fa-database"></i>
+               <span>{{keyspace.keyspace_name}}</span>
+           </a>
+           <ul class="subnavbar" ng-slide-down="keyspace.expand" duration="0.5">
+               <li ng-repeat="table in filterTablesData(keyspace.keyspace_name)">
+                   <a href="#" ng-click="openTable(keyspace.keyspace_name, table.columnfamily_name)" style="{{activeTableClass(table.columnfamily_name)}}">{{table.columnfamily_name}}</a>
+               </li>
+           </ul>
+       </li>
+    </ul>
+    </div>
+</div>

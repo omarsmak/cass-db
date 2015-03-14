@@ -1,0 +1,11 @@
+<div ng-controller="CQLDataCtrl">
+    <section class="sql_input">
+        <label class="control-label">CQL</label>
+        <input class="cql_form form-control" id="sql_form_input" type="text" ng-model="cql_input">
+        <a href="#" class="btn btn-primary query_btn" ng-click="runQuery()">Run Query</a>
+    </section>
+    <section class="results_view" ui-i18n="en">
+        <!--<results-view query="query"></results-view>-->
+        <div ui-grid="gridOptions" class="tableViewKeyspace cql_results" ui-grid-edit ui-grid-cellNav ui-grid-selection ui-grid-selection ui-grid-resize-columns ng-show="showResults"></div>
+    </section>
+</div>

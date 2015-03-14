@@ -1,0 +1,11 @@
+<div ng-controller="TableStructureViewCtrl">
+    <section class="results_view" ui-i18n="en">
+        <!--<results-view query="query"></results-view>-->
+        <div ui-grid="gridOptions" class="tableView" ui-grid-edit ui-grid-cellNav ui-grid-selection ui-grid-selection ui-grid-resize-columns></div>
+        <div>{{lastCellEdited}}</div>
+        <div class="results-btns-groups">
+            <a href="#" class="btn btn-primary query_btn" ng-click="addCols()">Add Column</a>
+            <a href="#" class="btn btn-primary query_btn" ng-click="dropCols()" ng-disabled="disableDelete" style="margin-left: 20px">Delete Columns(s)</a>
+        </div>
+    </section>
+</div>

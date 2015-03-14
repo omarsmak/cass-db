@@ -1,0 +1,40 @@
+<div ng-controller="DashboardCtrl" style="height: 100%">
+<div class="svg-loader text-center" loading-spinner></div>
+<h4 class="svg-loader-text text-center">{{loader.loadingText}}</h4>
+    <div ng-show="error.showLogingError" class="loginErrorPanel" >
+        <div class="alert alert-danger" style="padding:30px;"  role="alert"><b>{{error.logInErrorMessage}}</b><br />{{error.logInErrorDetails}}</div>
+
+        <a href="#" class="btn btn-success btn-lg pull-right" style="margin-top:20px;" ng-click="errorLogOut()">Back</a>
+    </div>
+
+    <div class="alert alert-dismissible alert-danger error-widget-small" ng-show="error.showErrorSmall">
+        <button type="button" class="close" data-dismiss="alert" ng-click="error.hideErrorSmall()">×</button>
+        <b>{{error.smallErrorMessage}}</b><br />{{error.smallErrorDetails}}
+    </div>
+
+    <div class="alert alert-dismissible alert-success success-widget-small" ng-show="success.showWidgetFlag">
+        <button type="button" class="close" data-dismiss="alert" ng-click="success.hideSuccessWidget()">×</button>
+        {{success.successMsg}}
+    </div>
+<div style="height: 100%">
+      <div class="navbar navbar-fixed-top dashboard-header" ng-show="showDashboardCtrl">
+          <a class="navbar-brand header" href="#">cass[db]</a>
+          <a href="#" class="btn btn-success logout navbar-right" ng-click="logOut()" >Logout</a>
+      </div>
+    <div class="container dashBoradContainer" ng-show="showDashboardCtrl" ng-switch on="selectedPage">
+
+       <div ng-switch-when="keyspaces" class="animate-keyspaces-page"><div ng-include="'/views/keyspaces.html'"></div></div>
+        <div class="row row-container" ng-show="showSidebarContainer">
+             <div class="col-md-2 col-container">
+                 <!--<aside sidebar-menu clusterdata="clusterData" tablesdata="tablesData" select-dashboard="selectMainDashboard()" ng-show="showSidebar" class="sidebar-container" activekeyspace="keyspace.keyspace_name"></aside>-->
+                 <aside ng-show="showSidebar" class="sidebar-container"><div ng-include="'/views/sidebar.html'" style="height:100%"></div></aside>
+             </div>
+             <div class="col-md-9">
+                 <div class="content-container animate-content-container" ng-show="showSidebar">
+                     <div ng-switch-when="keyspace_main"><div ng-include="'/views/keyspace_main.html'"></div></div>
+                 </div>
+             </div>
+        </div>
+    </div>
+</div>
+</div>

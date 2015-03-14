@@ -1,0 +1,54 @@
+<div ng-controller="KeyspaceStructureViewCtrl">
+    <div class="keyspace_info_schema">
+        <strong>Meta:</strong>
+        <div>
+            <ul style="">
+                <li><strong>Keyspace Name</strong> {{keyspaceInfo.keyspace_name}}</li>
+                <li><strong>Durable Write</strong> {{keyspaceInfo.durable_writes}}</li>
+                <li><strong>Strategy Class</strong> {{keyspaceInfo.strategy_class}}</li>
+                <li><strong>Strategy Options</strong> {{keyspaceInfo.strategy_options}}</li>
+            </ul>
+        </div>
+    </div>
+    <section class="results_view" ui-i18n="en">
+        <!--<results-view query="query"></results-view>-->
+        <div ui-grid="gridOptions" class="tableViewKeyspace" ui-grid-edit ui-grid-cellNav ui-grid-selection ui-grid-resize-columns></div>
+        <div>{{lastCellEdited}}</div>
+        <div class="results-btns-groups">
+            <a href="#" class="btn btn-primary query_btn" ng-click="addTable()">Add Table</a>
+            <a href="#" class="btn btn-primary query_btn" ng-click="dropTables()" ng-disabled="disableDelete" style="margin-left: 20px">Delete Table(s)</a>
+        </div>
+    </section>
+</div>
+
+<script type="text/ng-template" id="myModalContent.html">
+    <form class="form-horizontal">
+    <div class="modal-header">
+        <h3 class="modal-title">Create Table</h3>
+    </div>
+        <div class="pop-error-wrapper">
+            <div class="alert alert-dismissible alert-danger pop-error" ng-show="showError">
+                <b>{{errorMsg}}</b><br /> {{errorDetails}}
+            </div>
+        </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label class="col-xs-2 control-label">Name*</label>
+            <div class="col-xs-10">
+                <input type="text" class="form-control" id="inputTableName" placeholder="Table Name" ng-model="inputTableName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2 control-label">Columns*</label>
+            <div class="col-xs-10">
+                <textarea class="form-control" rows="3" id="columnsNames" ng-model="columnsNames"></textarea>
+                <span class="help-block">e.g: empID int, deptID int, PRIMARY KEY (empID, deptID)</span>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">Create</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+        </form>
+</script>

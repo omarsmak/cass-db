@@ -1,0 +1,15 @@
+<div ng-controller="TableDataViewCtrl">
+     <section class="sql_input">
+          <label class="control-label">CQL</label>
+          <input class="sql_form form-control disabledCQL" id="sql_form_input" type="text" ng-model="cql_input" disabled>
+          <!--<a href="#" class="btn btn-primary query_btn" ng-click="runQuery()">Run Query</a>-->
+     </section>
+     <section class="results_view" ui-i18n="en">
+          <!--<results-view query="query"></results-view>-->
+          <div ui-grid="gridOptions" class="tableViewKeyspace" ui-grid-edit ui-grid-cellNav ui-grid-selection ui-grid-selection ui-grid-resize-columns style="width: 100%"></div>
+          <div class="results-btns-groups">
+               <a href="#" class="btn btn-primary query_btn" ng-click="addRow()">Add Row</a>
+               <a href="#" class="btn btn-primary query_btn" ng-click="deleteRows()" ng-disabled="disableDelete" style="margin-left: 20px">Delete Row(s)</a>
+          </div>
+     </section>
+</div>

@@ -1,0 +1,6 @@
+<div ng-controller="KeyspaceMainCtrl">
+    <div ng-switch on="SelectedKeyspaceView">
+        <div ng-switch-when="keyspace" class="animate-keyspaces"><div ng-include="'/views/keyspace.html'"></div></div>
+        <div ng-switch-when="table" class="animate-table"><div ng-include="'/views/table.html'"></div></div>
+    </div>
+</div>
