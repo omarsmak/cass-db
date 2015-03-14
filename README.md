@@ -34,7 +34,13 @@ cass[db] is a modern DBMS for Cassandra database.
   
   
   #### Screenshots
+  ![Alt text](https://raw.githubusercontent.com/omarsmak/cass-db/master/screenshots/dashboard_keyspaces.png)
+
+  ![Alt text](https://raw.githubusercontent.com/omarsmak/cass-db/master/screenshots/table_cql.png)
   
+  ![Alt text](https://raw.githubusercontent.com/omarsmak/cass-db/master/screenshots/table_dat.png)
+  
+  ![Alt text](https://raw.githubusercontent.com/omarsmak/cass-db/master/screenshots/table_data_view.png)
   
   
   #### Installation
